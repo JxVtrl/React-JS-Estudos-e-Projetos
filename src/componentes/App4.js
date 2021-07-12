@@ -12,7 +12,16 @@ class App4 extends React.Component{
 
     trocaNome = ()=>{
         this.setState({nome: this.state.txtNome})
+        sessionStorage.setItem('nome', this.state.txtNome)
 
+    }
+
+    // Esta funcao abaixo esta predefinida para rodar depois que os componentes sao criados, antes da aplicacao realmente mostrar algo na tela
+    componentDidMount = () => {
+        const nome = sessionStorage.getItem('nome')
+        if(nome){
+            this.setState({nome})
+        }
     }
 
   render(){
