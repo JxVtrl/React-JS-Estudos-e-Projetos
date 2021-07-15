@@ -26,8 +26,7 @@ class Lista extends React.Component{
                     {/* com essa funcao abaixo qualquer texto que estiver no index entre tag pode aparecer */} 
                     {/* {this.props.children} */}
 
-                    {/* Maneira que só pega os que sao itens mesmo
-                     Vai pegar a child de vetor criado pela tag no index e caso o type desse child for Item ele retorna ele mesmo senão retorna null */}
+                    {/* No exemplo, fizemos a verificação se o filho é uma instância da classe Item, se for retornamos ele, se não for retornamos null. */}
                     {React.Children.map(this.props.children, child => child.type == Item ? child : null)}
                 </ul>
             </>
